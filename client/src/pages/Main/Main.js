@@ -29,13 +29,15 @@ class Main extends Component {
 	//Loads results from API call and stores in state
 	loadResults() {
 		API.searchNYT(this.state.topic, this.state.startyear, this.state.endyear)
-			.then(res =>
+			.then(res => {
 				this.setState({
 					results: res.data.response.docs,
 					topic: "",
 					startyear: "",
 					endyear: ""
-				}))
+				});
+				if (!res.data.response.docs.length) alert("No articles found.");
+			})
         	.catch(err => console.log(err));
     	
     }
@@ -80,7 +82,7 @@ class Main extends Component {
 			.then(res => this.loadArticles())
 			.catch(err => console.log(err));
 		
-		setTimeout(() => alert("Saved article"), 50);
+		setTimeout(() => alert("Article saved."), 50);
 	};
 
 	//Deletes article from Mongoose database
