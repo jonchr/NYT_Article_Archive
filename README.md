@@ -1,42 +1,34 @@
-# Create React Express App
+# NYT Article Archive
+A full-stack React application that allows you to search for and archive articles from the New York Times. It is live at https://jons-nyt-archive.herokuapp.com.
 
-## About This Boilerplate
+## Description
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+This single-page application allows you to search the New York Times API for articles related and within a certain topic and timeframe. It will then the first ten results with links and basic information about each article. The user can either remove a certain article from search results or store them in the archive. They can also search for a new topic, as well as clear all search results.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+Upon page load, this application will list all articles currently stored, along with the option to remove them from the archive.
 
-## Starting the app locally
+### Development
 
-Start by installing front and backend dependencies. While in this directory, run the following commands:
+This application was developed as part of the GW Coding Bootcamp and was completed at the end of the tenth week. It is a full-stack application organized with proper MVC design. The front-end uses React. The back-end uses Express, Body-Parser, and Axios for server functions, and Mongoose to connect to the NoSQL database.
 
-```
-yarn install
-cd client
-yarn install
-cd ..
-``
+### Organization
 
-After both installations complete, run the following command in your terminal:
+This repo can be cloned to your computer and accessed using the following commands:
 
-```
-yarn start
-```
+		git clone https://github.com/jonchr/NYT_Article_Archive.git
+		cd NYT_Article_Archive
 
-That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+The user may need to run their NoSQL server with the following commands:
 
-## Deployment (Heroku)
+		mongod
+		mongo
 
-After confirming that you have an up to date git repository and a Heroku app created, complete the following:
+They then can run the server and open the page in a new command prompt window using:
 
-1. Build the React app for production by running the following command:
+		yarn start
 
-```
-yarn build
-```
+To stop each of these functions, press Control-C while in your command prompt window.
 
-2. Add and commit all changes to git
-
-3. Push to Heroku
-
-If all previous steps were followed correctly, your application should be deployed to Heroku!
+## Screenshots
+### The main page - someone is a smartphone nerd.
+![Main Page](nyt.png)
